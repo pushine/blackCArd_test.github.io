@@ -1,0 +1,127 @@
+@import "bourbon/bourbon"
+$error_color: #FF366F
+$primary_color: #00BFFF
+$success_color: #00DC97
+$secondary_success_color: #00D77B
+$text_color: #000000
+$light_color: #C4C4C4
+$border_color: #000000
+
+
+@media only screen and (max-width : 991px)
+	h1, .h1
+		font-size: 40px
+		margin: 0 0 30px
+	h2, .h2
+		margin: 0 0 20px
+	h6
+		font-size: 20px
+		line-height: 1.4
+		font-family: AvenirNextDemiBold, sans-serif
+		font-weight: bold
+	.button
+		min-height: 40px
+		font-size: 20px
+		min-width: 180px
+	.hidden_lg
+		display: block !important
+	.hidden_md
+		display: none !important
+	.big__checkbox_wrap
+		width: 40px
+		min-width: 40px
+		height: 40px
+		margin-right: 30px
+		margin-top: 15px
+		label
+			border-radius: 10px
+	.todo__list_item__del_button
+		width: 40px
+		height: 40px
+		min-width: 40px
+
+	.todo__list_item__content
+		margin-right: 20px
+
+	.todo__list_item__content
+		p, pre
+			font-size: 14px
+	.todo__create_item-input
+		font-size: 24px
+		height: 40px
+	.todo__create_item-block-inner
+		textarea
+			font-size: 14px
+			height: 40px
+
+@media only screen and (max-width : 767px)
+
+	.hidden_lg
+		display: block
+	.hidden_md
+		display: block !important
+	.hidden_sm
+		display: none !important
+
+	section
+		padding: 40px 0
+	.container
+		padding: 0 20px
+
+	.todo__list_item
+		&:not(:last-of-type)
+			margin-bottom: 20px
+		&:before
+			display: none
+	.todo__list_item-inner
+		padding: 0
+	.big__checkbox_wrap, .todo__list_item__del_button
+		margin-top: 0
+
+	.big__checkbox_wrap
+		width: 30px
+		height: 30px
+		min-width: 30px
+		label
+			border-radius: 6px
+			&:after
+				background-size: 10px
+	.todo__list_item__del_button
+		width: 30px
+		height: 30px
+		min-width: 30px
+		svg
+			width: 80%
+	.todo__list_item__content
+		max-height: none
+
+
+	.todo__create_item-block
+		padding: 0
+		&:before
+			display: none
+	.todo__create_item-input
+		padding: 5px 20px
+		font-size: 18px
+		border-radius: 4px
+
+	.todo__create_item-block-inner
+		textarea
+			padding: 10px 20px
+			border-radius: 4px
+			height: 60px
+	.todo__create_item-button_wrap
+		justify-content: center
+
+
+
+
+@media only screen and (min-width : 992px)
+	.header__top-nav
+		display: block !important
+@media only screen and (min-width : 1440px)
+	.hidden_xl
+		display: none !important
+
+
+

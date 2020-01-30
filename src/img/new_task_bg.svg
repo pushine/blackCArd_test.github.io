@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1082" height="342" viewBox="0 0 1082 342">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #32c5ff;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="421" y="797" width="1079" height="339" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dy="9" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="7.071"/>
+      <feFlood result="flood" flood-opacity="0.1"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="translate(-419.5 -795.5)" style="fill: #fff; filter: url(#filter)">
+    <path id="Rectangle" class="cls-1" d="M550,837h860a39.963,39.963,0,0,1,40,40v160a39.963,39.963,0,0,1-40,40H510a39.963,39.963,0,0,1-40-40V877h0l80-40h0Z" style="stroke: inherit; filter: none; fill: inherit"/>
+  </g>
+  <use transform="translate(-419.5 -795.5)" xlink:href="#Rectangle" style="stroke: #32c5ff; filter: none; fill: none"/>
+</svg>

@@ -1,0 +1,329 @@
+/*reset*/
+@import "src/css/reset"
+/*fonts*/
+@import "src/sass/fonts.sass"
+/*bourbon*/
+@import "bourbon/bourbon"
+
+/*stiles*/
+$error_color: #FF366F
+$primary_color: #00BFFF
+$success_color: #00DC97
+$secondary_success_color: #00D77B
+$text_color: #000000
+$light_color: #C4C4C4
+$border_color: #000000
+
+@mixin optional-at-root($sel)
+  @at-root #{if(not &, $sel, selector-append(&, $sel))}
+    @content
+
+@mixin placeholder
+  @include optional-at-root('::-webkit-input-placeholder')
+    @content
+
+  @include optional-at-root(':-moz-placeholder')
+    @content
+
+  @include optional-at-root('::-moz-placeholder')
+    @content
+
+  @include optional-at-root(':-ms-input-placeholder')
+    @content
+
+
+input[type="number"]
+	-moz-appearance: textfield
+	&::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+		-webkit-appearance: none
+
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid,
+body select:focus:required:invalid
+	color: $error_color
+	border-color: $error_color
+
+*
+	box-sizing: border-box
+	&::before, &::after
+		box-sizing: border-box
+	&:focus
+		outline: none
+	&:active
+		outline: none
+
+.hidden
+	display: none
+.container
+	margin-right: auto
+	margin-left: auto
+	width: 100%
+	max-width: 1060px
+	padding: 0 40px
+body
+	font-family: AvenirNextRegular, sans-serif
+	font-size: 22px
+	line-height: 1.6
+	overflow-x: hidden
+	color: $text_color
+h1, .h1
+	font-family: AvenirNextMedium, sans-serif
+	font-weight: bold
+	line-height: 1
+	font-size: 44px
+	margin: 0 0 40px
+h2, .h2
+	font-family: AvenirNextDemiBold, sans-serif
+	font-weight: bold
+	font-size: 24px
+	line-height: 1
+	margin: 0 0 30px
+h6
+	font-size: 30px
+	line-height: 1.4
+	font-family: AvenirNextDemiBold, sans-serif
+	font-weight: bold
+p, pre
+	margin: 0
+	white-space: normal
+a
+	text-decoration: none
+	transition: .25s
+ul
+	margin: 0
+	padding: 0
+	list-style-type: none
+button
+	cursor: pointer
+	border: none
+	background-color: transparent
+.flex
+	display: flex
+.centered
+	display: flex
+	align-items: center
+	justify-content: center
+.justify
+	display: flex
+	justify-content: space-between
+.centered_col
+	display: flex
+	flex-direction: column
+	align-items: center
+.uppercase
+	text-transform: uppercase
+.rounded
+	border-radius: 50%
+.small_text
+	font-size: 18px
+	line-height: 1.5
+.big_text
+	font-size: 28px
+	line-height: 1.32
+	text-align: center
+.error
+	border-color: $error_color
+	color: $error_color
+input, textarea
+	+placeholder
+		transition: .3s
+	&.error
+		+placeholder
+			color: $error_color
+	&:focus
+		+placeholder
+			opacity: 0
+section
+	padding: 80px 0
+.button
+	display: inline-flex
+	justify-content: center
+	align-items: center
+	padding: 5px 20px
+	min-height: 60px
+	min-width: 230px
+	color: #ffffff
+	cursor: pointer
+	transition: .3s
+	font-family: AvenirNextDemiBold, sans-serif
+	line-height: 1
+	background-size: 200% 100%
+	border-radius: 32px
+	font-size: 22px
+	background-image: linear-gradient( 135deg, $success_color, $primary_color)
+	background-position: 30% 0
+	&:hover
+		background-position: 100% 0
+
+
+
+.todo
+	min-height: 100vh
+	background-size: cover
+	background-position: center
+	.h1, .h2
+		text-align: center
+
+.todo__list
+	padding-bottom: 35px
+	margin-bottom: 40px
+	background: url(../img/border_image.png) bottom left repeat-x
+.todo__list_item
+	//&:not(:last-of-type)
+	//	margin-bottom: 25px
+	&.checked
+		h6
+			color: $success_color
+	&:before
+		top: -35px
+		right: -35px
+		bottom: -35px
+		left: -43px
+.todo__list_item-inner
+	width: 100%
+	display: flex
+	padding: 35px 35px 35px 43px
+	align-items: flex-start
+	position: relative
+
+
+.checkbox_wrap
+	position: relative
+	input
+		display: none
+	label
+		display: inline-block
+		cursor: pointer
+.big__checkbox_wrap
+	width: 56px
+	min-width: 56px
+	height: 56px
+	margin-right: 36px
+	margin-top: 15px
+	label
+		width: 100%
+		height: 100%
+		border-radius: 16px
+		background-color: #ffffff
+		box-shadow: 0 9px 50px 0 rgba(0, 0, 0, 0.1)
+		transition: .3s
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			background: url(../img/check.svg) center no-repeat
+			display: block
+			width: 50%
+			height: 50%
+		&:hover
+			box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.15)
+	input
+		&:checked
+			&+label
+				background-color: $success_color
+				box-shadow: 0 5px 15px 0 rgba(20, 188, 92, 0.5)
+				&:hover
+					box-shadow: 0 5px 10px 0 rgba(20, 188, 92, 0.6)
+.todo__list_item__content
+	max-width: 80%
+	margin-right: 40px
+	max-height: 150px
+	overflow-y: auto
+	pre
+		max-width: 100%
+		margin-bottom: 20px
+	h6
+		transition: .3s
+
+
+.todo_with_bg
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		background-image: url(../img/todo_item_bg.svg)
+		background-size: 100% 100%
+		background-repeat: no-repeat
+		-webkit-background-origin: content-box
+		background-origin: border-box
+	&.checked
+		&:before
+			background-image: url(../img/todo_active-item_bg.svg)
+
+
+
+.todo__list_item__del_button
+	width: 74px
+	min-width: 74px
+	height: 74px
+	border-radius: 50%
+	display: flex
+	justify-content: center
+	align-items: center
+	border: 1px solid $error_color
+	transition: .3s
+	margin-top: 5px
+	margin-left: auto
+	svg
+		width: 60%
+		height: 60%
+	.cls-1
+		transition: .3s
+	&:hover
+		background-color: $error_color
+		.cls-1
+			fill: #fff
+
+
+.todo__create_item-block
+	padding: 45px 15px 30px 75px
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		background-image: url(../img/new_task_bg.svg)
+		background-size: 100% 100%
+		background-repeat: no-repeat
+		-webkit-background-origin: content-box
+		background-origin: border-box
+		top: -20px
+		right: -48px
+		bottom: -48px
+		left: -46px
+.todo__create_item-block-inner
+	position: relative
+	textarea
+		width: 100%
+		resize: none
+		border: none
+		padding: 0
+		height: 60px
+		font-size: 22px
+		font-family: AvenirNextRegular, sans-serif
+		font-weight: normal
+		margin-bottom: 10px
+		+placeholder
+			opacity: .3
+.todo__create_item-input
+	width: 100%
+	height: 50px
+	padding-bottom: 18px
+	border: none
+	border-bottom: 1px solid #F0F0F0
+	margin-bottom: 20px
+	font-size: 30px
+	font-family: AvenirNextDemiBold, sans-serif
+	font-weight: bold
+	+placeholder
+		opacity: .3
+.todo__create_item-button_wrap
+	display: flex
+	justify-content: flex-end
+
+/*media starts*/
+@import "src/sass/media.sass"
+
